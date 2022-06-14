@@ -57,8 +57,8 @@ import 'package:flutter/services.dart';
 class CroppedImage extends StatelessWidget {
   const CroppedImage(
     String assetUrl, {
-    @required this.width,
-    @required this.height,
+    required this.width,
+    required this.height,
     this.scaleX = 1,
     this.scaleY = 1,
     this.offsetX = 0,
@@ -77,7 +77,7 @@ class CroppedImage extends StatelessWidget {
   final double width, height;
   final double scaleX, scaleY;
   final double offsetX, offsetY;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -134,12 +134,12 @@ class ImageEditor extends CustomPainter {
     this.offset,
   });
 
-  ui.Image image;
-  Offset offset;
+  ui.Image? image;
+  Offset? offset;
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawImage(image, offset, Paint());
+    canvas.drawImage(image!, offset!, Paint());
   }
 
   @override

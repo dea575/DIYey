@@ -4,7 +4,7 @@ import 'package:path_drawing/path_drawing.dart';
 class Mask extends StatelessWidget {
   const Mask(this.clipPath, {this.child});
 
-  factory Mask.fromSVGPath(String svgPath, {Widget child, Offset offset}) {
+  factory Mask.fromSVGPath(String svgPath, {Widget? child, Offset? offset}) {
     Path path = parseSvgPathData(svgPath);
     if (offset != null) {
       path = path.shift(offset);
@@ -13,7 +13,7 @@ class Mask extends StatelessWidget {
   }
   final Path clipPath;
 
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) => ClipPath(

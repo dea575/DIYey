@@ -10,11 +10,11 @@ import 'package:path_drawing/path_drawing.dart';
 class SvgWidget extends StatelessWidget {
   const SvgWidget({this.painters});
 
-  final List<SvgPathPainter> painters;
+  final List<SvgPathPainter>? painters;
 
   @override
   Widget build(BuildContext context) =>
-      CustomPaint(painter: SvgPathsPainter(painters, Notifier()));
+      CustomPaint(painter: SvgPathsPainter(painters!, Notifier()));
 }
 
 class SvgPathPainter {
@@ -26,7 +26,7 @@ class SvgPathPainter {
   }
 
   factory SvgPathPainter.stroke(double strokeWidth,
-      {StrokeCap strokeCap, StrokeJoin strokeJoin, double strokeMiterLimit}) {
+      {StrokeCap? strokeCap, StrokeJoin? strokeJoin, double? strokeMiterLimit}) {
     final Paint paint = Paint()
       ..style = PaintingStyle.fill
       ..strokeWidth = strokeWidth;
@@ -42,16 +42,16 @@ class SvgPathPainter {
     return SvgPathPainter._(paint);
   }
 
-  Notifier repaint;
+  Notifier? repaint;
   final List<Path> _paths = [];
-  Path _clipPath;
+  Path? _clipPath;
   final Paint _paint;
 
   void addPath(String path) => _paths.add(parseSvgPathData(path));
 
   void addClipPath(String path) {
     _clipPath ??= Path();
-    _clipPath.extendWithPath(parseSvgPathData(path), Offset.zero);
+    _clipPath!.extendWithPath(parseSvgPathData(path), Offset.zero);
   }
 
   set color(Color color) {
@@ -59,33 +59,33 @@ class SvgPathPainter {
   }
 
   void setLinearGradient(
-      {@required double startX,
-      @required double startY,
-      @required double endX,
-      @required double endY,
-      @required List<Color> colors,
-      List<double> colorStops}) {
+      {required double startX,
+      required double startY,
+      required double endX,
+      required double endY,
+      required List<Color> colors,
+      List<double>? colorStops}) {
     _paint.shader = ui.Gradient.linear(
         Offset(startX, startY), Offset(endX, endY), colors, colorStops);
   }
 
   void setRadialGradient(
-      {@required double centerX,
-      @required double centerY,
-      @required double radius,
-      @required List<Color> colors,
-      List<double> colorStops}) {
+      {required double centerX,
+      required double centerY,
+      required double radius,
+      required List<Color> colors,
+      List<double>? colorStops}) {
     _paint.shader = ui.Gradient.radial(
         Offset(centerX, centerY), radius, colors, colorStops);
   }
 
   void setSweepGradient({
-    @required double centerX,
-    @required double centerY,
-    @required List<Color> colors,
-    List<double> colorStops,
-    double startAngle,
-    double endAngle,
+    required double centerX,
+    required double centerY,
+    required List<Color> colors,
+    List<double>? colorStops,
+    required double startAngle,
+    required double endAngle,
   }) {
     _paint.shader = ui.Gradient.sweep(Offset(centerX, centerY), colors,
         colorStops, TileMode.clamp, startAngle, endAngle);
@@ -95,7 +95,7 @@ class SvgPathPainter {
     _paint.maskFilter = MaskFilter.blur(BlurStyle.inner, sigma);
   }
 
-  Future<void> setImage({String imageAssetPath, double opacity}) async {
+  Future<void> setImage({required String imageAssetPath, double? opacity}) async {
     final ByteData data = await rootBundle.load(imageAssetPath);
     final codec = await ui.instantiateImageCodec(Uint8List.view(data.buffer));
     final frameInfo = await codec.getNextFrame();
@@ -132,7 +132,7 @@ class SvgPathPainter {
 
   void draw(Canvas canvas) {
     if (_clipPath != null) {
-      canvas.clipPath(_clipPath);
+      canvas.clipPath(_clipPath!);
     }
     _paths.forEach((element) => canvas.drawPath(element, _paint));
   }
@@ -152,7 +152,7 @@ class SvgPathsPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    _painters?.forEach((element) => element.draw(canvas));
+    _painters.forEach((element) => element.draw(canvas));
   }
 }
 

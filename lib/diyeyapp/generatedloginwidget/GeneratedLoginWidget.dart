@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/diyeyapp/generatedloginwidget/generated/GeneratedLine3Widget.dart';
-import 'package:flutterapp/diyeyapp/generatedloginwidget/generated/GeneratedUsernameWidget.dart';
+// import 'package:flutterapp/diyeyapp/generatedloginwidget/generated/GeneratedUsernameWidget.dart';
 import 'package:flutterapp/diyeyapp/generatedloginwidget/generated/GeneratedImage1Widget.dart';
 import 'package:flutterapp/diyeyapp/generatedloginwidget/generated/GeneratedLoginWidget1.dart';
 import 'package:flutterapp/diyeyapp/generatedloginwidget/generated/GeneratedLoginWidget2.dart';
@@ -35,12 +35,12 @@ class GeneratedLoginWidget extends StatelessWidget {
               ),
               Positioned(
                 left: 71.0,
-                top: 347.0,
+                top: 342.0,
                 right: null,
                 bottom: null,
                 width: 218.0,
-                height: 46.0,
-                child: GeneratedRectangle1Widget(),
+                height: 51.0,
+                child: Email(),
               ),
               Positioned(
                 left: 71.0,
@@ -48,27 +48,27 @@ class GeneratedLoginWidget extends StatelessWidget {
                 right: null,
                 bottom: null,
                 width: 218.0,
-                height: 46.0,
-                child: GeneratedRectangle2Widget(),
+                height: 51.0,
+                child: Password(),
               ),
-              Positioned(
-                left: 79.0,
-                top: 355.0,
-                right: null,
-                bottom: null,
-                width: 106.0,
-                height: 34.0,
-                child: GeneratedUsernameWidget(),
-              ),
-              Positioned(
-                left: 79.0,
-                top: 414.0,
-                right: null,
-                bottom: null,
-                width: 148.0,
-                height: 34.0,
-                child: GeneratedPasswordWidget(),
-              ),
+              // Positioned(
+              //   left: 79.0,
+              //   top: 355.0,
+              //   right: null,
+              //   bottom: null,
+              //   width: 106.0,
+              //   height: 34.0,
+              //   child: GeneratedUsernameWidget(),
+              // ),
+              // Positioned(
+              //   left: 79.0,
+              //   top: 414.0,
+              //   right: null,
+              //   bottom: null,
+              //   width: 148.0,
+              //   height: 34.0,
+              //   child: GeneratedPasswordWidget(),
+              // ),
               Positioned(
                 left: 60.0,
                 top: 89.0,
@@ -114,15 +114,15 @@ class GeneratedLoginWidget extends StatelessWidget {
                 height: 24.0,
                 child: GeneratedRegisterWidget(),
               ),
-              Positioned(
-                left: 152.0,
-                top: 579.0,
-                right: null,
-                bottom: null,
-                width: 70.0,
-                height: 1.0,
-                child: GeneratedLine3Widget(),
-              )
+              // Positioned(
+              //   left: 152.0,
+              //   top: 579.0,
+              //   right: null,
+              //   bottom: null,
+              //   width: 70.0,
+              //   height: 1.0,
+              //   child: GeneratedLine3Widget(),
+              // )
             ]),
       ),
     ));
