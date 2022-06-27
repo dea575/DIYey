@@ -6,8 +6,7 @@
 <img width="281" alt="Screenshot (371)" src="https://user-images.githubusercontent.com/89899174/163713089-067ba9ac-a7eb-4f03-b1fd-2d6dc38dae29.png">
 <img width="280" alt="Screenshot (372)" src="https://user-images.githubusercontent.com/89899174/163713098-a65aa5f2-5ab4-47c9-849a-f53365c0130b.png">
 <img width="292" alt="Screenshot (373)" src="https://user-images.githubusercontent.com/89899174/163713119-7f894d1c-dfe3-493c-b119-a2d6b3d4dfd5.png">
-![WhatsApp Image 2022-06-27 at 10 53 31](https://user-images.githubusercontent.com/89899114/175856971-5a4f6fed-3754-4716-b4bb-98b2438f060a.jpeg)
-![WhatsApp Image 2022-06-27 at 10 53 32](https://user-images.githubusercontent.com/89899114/175856991-014f4241-e57f-423e-84f8-6be107c2986f.jpeg)
+
 
 # DIYey
 
